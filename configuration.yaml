@@ -59,6 +59,12 @@ weather:
   - platform: darksky
     api_key: !secret darksky_api_key
 
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  platform: smart_life
+  country_code: 1
+
 # Text to speech
 tts:
   - platform: google
