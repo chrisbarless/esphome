@@ -32,3 +32,38 @@ sensor:
     pin: 35
     update_interval: 5s
 
+esphomeyaml:
+  name: firewatch_v2
+  platform: ESP8266
+  board: nodemcuv2
+  use_custom_code: true
+  includes:
+    - firewatch_v2/firewatch_sensor.h
+  libraries:
+    - "https://github.com/ojarva/grove-hightemp-sensor-library"
+
+wifi:
+  ssid: !secret wifi_network_name
+  password: !secret wifi_password
+
+logger:
+
+api:
+
+ota:
+
+sensor:
+- platform: custom
+  id: thermocoupler
+  lambda: |-
+    auto firewatch_sensor = new FirewatchSensor();
+    App.register_component(firewatch_sensor);
+    return {firewatch_sensor};
+  sensors:
+    name: "Wood Stove Temp"
+    unit_of_measurement: "°C"
+    icon: "mdi:fire"
+    on_value: 
+      logger.log:
+        format: "Stove temp is %.1f"
+        args: [ 'x' ]
