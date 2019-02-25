@@ -1,0 +1,34 @@
+esphomeyaml:
+  name: weatherstation
+  platform: ESP8266
+  board: nodemcuv2
+  use_custom_code: true
+  includes:
+    - weatherstation/weatherstation.h
+  libraries:
+    - "https://github.com/ojarva/grove-hightemp-sensor-library"
+
+
+wifi:
+  ssid: !secret wifi_network_name
+  password: !secret wifi_password
+  manual_ip:
+    static_ip: 192.168.1.204
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0
+
+
+logger:
+
+api:
+
+ota:
+
+display:
+  - platform: custom
+    # ...
+    lambda: |-
+      // Write your display rendering code here
+
+      // For example, draw a line from [x=0,y=0] to [x=50,y=50]
+      it.line(0, 0, 50, 50);
