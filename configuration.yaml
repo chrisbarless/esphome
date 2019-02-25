@@ -11,10 +11,13 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-introduction:
+# introduction:
 
 # Enables the frontend
 frontend:
+
+# System health
+system_health:
 
 # Enables configuration UI
 config:
@@ -58,6 +61,12 @@ sun:
 weather:
   - platform: darksky
     api_key: !secret darksky_api_key
+
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  platform: smart_life
+  country_code: 1
 
 # Text to speech
 tts:

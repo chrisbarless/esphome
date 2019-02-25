@@ -4,7 +4,7 @@ esphomeyaml:
   board: nodemcuv2
   use_custom_code: true
   includes:
-    - firewatch_v2/firewatch_sensor.h
+    - sensors/thermocoupler.h
   libraries:
     - "https://github.com/ojarva/grove-hightemp-sensor-library"
 
