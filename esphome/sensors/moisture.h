@@ -1,13 +1,9 @@
 include <Arduino.h>
-#include "esphomelib.h"
-#include "high_temp_sensor.h"
-
-HighTemp ht(0, A0);
+#include "esphome.h"
 
 static const char *TAG = "firewatch";
 
 using namespace esphomelib;
-
 
 class MoistureSensor : public PollingComponent, public sensor::Sensor {
  public:
