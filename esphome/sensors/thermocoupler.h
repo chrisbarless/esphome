@@ -1,10 +1,7 @@
 #include <Arduino.h>
-#include "esphomelib.h"
 #include "high_temp_sensor.h"
 
 HighTemp ht(0, A0);
-
-static const char *TAG = "firewatch";
 
 using namespace esphomelib;
 
