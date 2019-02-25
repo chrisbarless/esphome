@@ -1,10 +1,10 @@
 esphomeyaml:
-  name: firewatch
+  name: firewatch_v2
   platform: ESP8266
   board: nodemcuv2
   use_custom_code: true
   includes:
-    - firewatch/firewatch_sensor.h
+    - firewatch_v2/firewatch_sensor.h
   libraries:
     - "https://github.com/ojarva/grove-hightemp-sensor-library"
 
