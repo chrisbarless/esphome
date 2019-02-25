@@ -1,4 +1,4 @@
-#include <Arduino.h>
+include <Arduino.h>
 #include "esphomelib.h"
 #include "high_temp_sensor.h"
 
@@ -9,10 +9,10 @@ static const char *TAG = "firewatch";
 using namespace esphomelib;
 
 
-class FirewatchSensor : public PollingComponent, public sensor::Sensor {
+class MoistureSensor : public PollingComponent, public sensor::Sensor {
  public:
 
-  FirewatchSensor() : PollingComponent(10000) { }
+  MoistureSensor() : PollingComponent(10000) { }
 
   void setup() override {
     ht.begin();
@@ -50,7 +50,6 @@ Connect the Soil Mosture Sensor to anolog input pin 0,
 
 and your 5 led to digital out 2-6
 
-*/
 
 int led1 = 2;
 
@@ -193,3 +192,4 @@ digitalWrite(probe, LOW);
 delay(1800000); // wait half an hour
 
 }
+*/
