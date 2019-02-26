@@ -1,18 +1,22 @@
-- alias: "Heat up nursery"
+- id: '1551155188930'
+  alias: Heat Nursery
   trigger:
-    platform: numeric_state
+  - below: '14'
     entity_id: sensor.nursery_temperature
-    # value_template: "{{ state.attributes.elevation }}"
-    below: 14
+    platform: numeric_state
+  condition: []
+  action:
   action:
     service: switch.turn_on
     entity_id: switch.18480742cc50e32c3567
-- alias: "Stop heating nursery"
+- id: '1551192725314'
+  alias: 'Stop Heating Nursery'
   trigger:
-    platform: numeric_state
+  - above: '16'
     entity_id: sensor.nursery_temperature
-    # value_template: "{{ state.attributes.elevation }}"
-    above: 16
+    platform: numeric_state
+  condition: []
   action:
     service: switch.turn_off
     entity_id: switch.18480742cc50e32c3567
+~
