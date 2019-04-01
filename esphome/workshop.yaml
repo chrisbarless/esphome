@@ -1,10 +1,8 @@
 esphome:
-  name: nursery
+  name: workshop
   platform: ESP32
   board: nodemcu-32s
   use_custom_code: true
-  includes:
-    - sensors/moisture.h
 
 wifi:
   ssid: !secret wifi_network_name
@@ -26,21 +24,7 @@ sensor:
       mode: ANALOG
     model: DHT11
     temperature:
-      name: "Nursery Temperature"
+      name: "Workshop Temperature"
     humidity:
-      name: "Nursery Humidity"
+      name: "Workshop Humidity"
     update_interval: 60s
-  - platform: custom
-    id: moisture
-    lambda: |-
-      auto moisture_sensor = new MoistureSensor();
-      App.register_component(moisture_sensor);
-      return {moisture_sensor};
-    sensors:
-      name: "Pothos Moisture"
-      unit_of_measurement: ""
-      icon: "mdi:water"
-      on_value: 
-        logger.log:
-          format: "Plant moisture is at %.1f"
-          args: [ 'x' ]
