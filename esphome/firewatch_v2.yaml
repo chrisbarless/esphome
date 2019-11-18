@@ -1,8 +1,8 @@
-esphomeyaml:
+esphome:
   name: firewatch_v2
   platform: ESP8266
   board: nodemcuv2
-  use_custom_code: true
+  # use_custom_code: true
   includes:
     - sensors/thermocoupler.h
   libraries:
@@ -29,7 +29,7 @@ sensor:
     name: "Wood Stove Temp"
     unit_of_measurement: "°C"
     icon: "mdi:fire"
-    on_value: 
+    on_value:
       logger.log:
         format: "Stove temp is %.1f"
         args: [ 'x' ]

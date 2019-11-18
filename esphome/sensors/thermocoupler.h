@@ -1,9 +1,10 @@
+#include "esphome.h"
 #include <Arduino.h>
 #include "high_temp_sensor.h"
 
 HighTemp ht(0, A0);
 
-using namespace esphomelib;
+/* using namespace esphome; */
 
 
 class FirewatchSensor : public PollingComponent, public sensor::Sensor {
@@ -22,3 +23,4 @@ class FirewatchSensor : public PollingComponent, public sensor::Sensor {
     publish_state(stoveTemp);
   }
 };
+
