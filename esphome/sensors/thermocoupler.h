@@ -17,7 +17,7 @@ class FirewatchSensor : public PollingComponent, public sensor::Sensor {
   }
 
   void update() override {
-    int stoveTemp = ht.getThermoCoupleTemperature();
+    float stoveTemp = ht.getThermoCoupleTemperature();
     // int roomTemp = ht.getRoomTemperature();
 
     publish_state(stoveTemp);
