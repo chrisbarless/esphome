@@ -10,8 +10,6 @@ homeassistant:
   unit_system: metric
   # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Toronto
-  # Customization file
-  customize: !include customize.yaml
 
 # Show links to resources in log and frontend
 # introduction:
@@ -42,7 +40,7 @@ updater:
 discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+# conversation:
 
 # Enables support for tracking state changes over time
 history:
@@ -65,15 +63,15 @@ weather:
   - platform: darksky
     api_key: !secret darksky_api_key
 
-tuya:
-  username: !secret tuya_username
-  password: !secret tuya_password
-  platform: smart_life
-  country_code: 1
+#tuya:
+#  username: !secret tuya_username
+#  password: !secret tuya_password
+#  platform: smart_life
+#  country_code: 1
 
 # Text to speech
-tts:
-  - platform: google
+#tts:
+#  - platform: google
 
 # Cloud
 cloud:

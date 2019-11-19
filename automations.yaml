@@ -5,7 +5,7 @@
   action:
   - service: mqtt.publish
     data:
-      topic: cmnd/tasmotas/SetOption19
+      topic: cmnd/sonoffs/SetOption19
       payload: '1'
   id: 25acbc2e74824de29c8dd198266d1e38
 
