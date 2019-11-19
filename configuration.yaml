@@ -59,19 +59,21 @@ sun:
   # Weather prediction
   # - platform: yr
   
-weather:
-  - platform: darksky
-    api_key: !secret darksky_api_key
+# weather:
+#   - platform: darksky
+#     api_key: !secret darksky_api_key
 
-#tuya:
+telegram_bot:
+  - platform: broadcast
+    api_key: !secret telegram_secret
+    allowed_chat_ids:
+      - !secret telegram_id
+
+# tuya:
 #  username: !secret tuya_username
 #  password: !secret tuya_password
 #  platform: smart_life
 #  country_code: 1
-
-# Text to speech
-#tts:
-#  - platform: google
 
 # Cloud
 cloud:
@@ -79,7 +81,6 @@ cloud:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
-
 
 panel_iframe:
   tasmoadmin:
