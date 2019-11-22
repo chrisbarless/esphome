@@ -60,5 +60,7 @@
     platform: numeric_state
   condition: []
   action:
-  - data: {}
+  - data:
+      entity_id:
+      - switch.wood_stove_fan
     service: switch.turn_off
