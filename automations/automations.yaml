@@ -1,66 +1,57 @@
-- alias: Enable MQTT discovery for all devices
-  trigger:
-    platform: homeassistant
-    event: start
-  action:
-  - service: mqtt.publish
-    data:
-      topic: cmnd/sonoffs/SetOption19
-      payload: '1'
-  id: 25acbc2e74824de29c8dd198266d1e38
-- id: '1573069336670'
-  alias: Mornings
-  description: ''
-  trigger:
-  - event: sunrise
-    platform: sun
-  condition: []
-  action:
-  - data:
-      entity_id:
-      - switch.kitchen_heater
-      - switch.powder_room_heater
-    service: switch.turn_on
-- id: '1573392246894'
-  alias: Morning's End
-  description: ''
-  trigger:
-  - at: '9:00'
-    platform: time
-  condition: []
-  action:
-  - data:
-      entity_id:
-      - switch.kitchen_heater
-      - switch.powder_room_heater
-    service: switch.turn_off
-- id: '1574283424999'
-  alias: Fire Starting
-  description: ''
-  trigger:
-  - above: 70
-    entity_id: sensor.wood_stove_temp
-    for:
-      minutes: 5
-    platform: numeric_state
-  condition: []
-  action:
-  - data:
-      entity_id:
-      - switch.wood_stove_fan
-    service: switch.turn_on
-- id: '1574400685338'
-  alias: Fire Cooling
-  description: ''
-  trigger:
-  - below: 60
-    entity_id: sensor.wood_stove_temp
-    for:
-      minutes: 20
-    platform: numeric_state
-  condition: []
-  action:
-  - data:
-      entity_id:
-      - switch.wood_stove_fan
-    service: switch.turn_off
+!include mqtt-autodiscovery.yaml
+# - id: '1573069336670'
+#   alias: Mornings
+#   description: ''
+#   trigger:
+#   - event: sunrise
+#     platform: sun
+#   condition: []
+#   action:
+#   - data:
+#       entity_id:
+#       - switch.kitchen_heater
+#       - switch.powder_room_heater
+#     service: switch.turn_on
+# - id: '1573392246894'
+#   alias: Morning's End
+#   description: ''
+#   trigger:
+#   - at: '9:00'
+#     platform: time
+#   condition: []
+#   action:
+#   - data:
+#       entity_id:
+#       - switch.kitchen_heater
+#       - switch.powder_room_heater
+#     service: switch.turn_off
+# - id: '1574283424999'
+#   alias: Fire Starting
+#   description: ''
+#   trigger:
+#   - above: 70
+#     entity_id: sensor.wood_stove_temp
+#     for:
+#       minutes: 5
+#     platform: numeric_state
+#   condition: []
+#   action:
+#   - data:
+#       entity_id:
+#       - switch.wood_stove_fan
+#     service: switch.turn_on
+# - id: '1574400685338'
+#   alias: Fire Cooling
+#   description: ''
+#   trigger:
+#   - below: 60
+#     entity_id: sensor.wood_stove_temp
+#     for:
+#       minutes: 20
+#     platform: numeric_state
+#   condition: []
+#   action:
+#   - data:
+#       entity_id:
+#       - switch.wood_stove_fan
+#     service: switch.turn_off

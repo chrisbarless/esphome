@@ -1,0 +1,10 @@
+- alias: Enable MQTT discovery for all devices
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/sonoffs/SetOption19
+      payload: '1'
+  id: 25acbc2e74824de29c8dd198266d1e38
