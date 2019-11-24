@@ -75,12 +75,6 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_id
 
-# tuya:
-#  username: !secret tuya_username
-#  password: !secret tuya_password
-#  platform: smart_life
-#  country_code: 1
-
 # Cloud
 cloud:
 
