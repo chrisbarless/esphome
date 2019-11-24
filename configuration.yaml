@@ -85,7 +85,7 @@ telegram_bot:
 cloud:
 
 group: !include groups.yaml
-automation: !include automations.yaml
+automation: !include automations/automations.yaml
 script: !include scripts.yaml
 
 panel_iframe:
