@@ -1,0 +1,26 @@
+- id: '1573069336670'
+  alias: Mornings
+  description: ''
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id:
+      - switch.kitchen_heater
+      - switch.powder_room_heater
+    service: switch.turn_on
+- id: '1573392246894'
+  alias: Morning's End
+  description: ''
+  trigger:
+  - at: '9:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id:
+      - switch.kitchen_heater
+      - switch.powder_room_heater
+    service: switch.turn_off
