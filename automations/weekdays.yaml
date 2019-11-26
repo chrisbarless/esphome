@@ -21,6 +21,5 @@
   action:
   - data:
       entity_id:
-      - switch.kitchen_heater
       - switch.powder_room_heater
     service: switch.turn_off
