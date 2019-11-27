@@ -1,0 +1,3 @@
+!include automations/mqtt-autodiscovery.yaml
+!include automations/weekdays.yaml
+!include automations/woodstove.yaml
