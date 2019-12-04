@@ -79,7 +79,7 @@ telegram_bot:
 cloud:
 
 group: !include groups.yaml
-automation: !include_dir_merge_list automation/
+automation: !include_dir_merge_list automation
 script: !include scripts.yaml
 
 panel_iframe:
