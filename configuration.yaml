@@ -79,10 +79,7 @@ telegram_bot:
 cloud:
 
 group: !include groups.yaml
-automation:
-  - !include automations/mqtt-autodiscovery.yaml
-  - !include automations/weekdays.yaml
-  - !include automations/woodstove.yaml
+automation: !include_dir_merge_list automation/
 script: !include scripts.yaml
 
 panel_iframe:
