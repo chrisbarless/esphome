@@ -4,7 +4,7 @@
   trigger:
   - at: '7:00'
     platform: time
-    condition: time
+    condition:
       weekday:
         - mon
         - tues
@@ -23,7 +23,7 @@
   trigger:
   - at: '9:00'
     platform: time
-    condition: time
+    condition:
       weekday:
         - mon
         - tues

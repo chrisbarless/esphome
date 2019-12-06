@@ -54,6 +54,9 @@ map:
 # Track the sun
 sun:
 
+weather:
+  - platform: environment_canada
+
 # Sensors
 sensor:
   - platform: template
