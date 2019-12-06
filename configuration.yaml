@@ -55,31 +55,32 @@ map:
 sun:
 
 # Sensors
-# sensor:
-  # Weather prediction
-  # - platform: yr
-  
-weather:
-  - platform: darksky
-    api_key: !secret darksky_api_key
+sensor:
+  - platform: template
+    sensors:
+      nextsunrise:
+        friendly_name: 'Next Sunrise'
+        value_template: >
+          {{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom(' %I:%M%p') | replace(" 0", "") }}
+        icon_template: mdi:weather-sunset-up
+      nextsunset:
+        friendly_name: 'Next Sunset'
+        value_template: >
+          {{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom(' %I:%M%p') | replace(" 0", "") }}
+        icon_template: mdi:weather-sunset-down
 
-#tuya:
-#  username: !secret tuya_username
-#  password: !secret tuya_password
-#  platform: smart_life
-#  country_code: 1
-
-# Text to speech
-#tts:
-#  - platform: google
+telegram_bot:
+  - platform: broadcast
+    api_key: !secret telegram_secret
+    allowed_chat_ids:
+      - !secret telegram_id
 
 # Cloud
 cloud:
 
 group: !include groups.yaml
-automation: !include automations.yaml
+automation: !include_dir_merge_list automation
 script: !include scripts.yaml
-
 
 panel_iframe:
   tasmoadmin:

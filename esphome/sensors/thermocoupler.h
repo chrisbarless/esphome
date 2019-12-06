@@ -10,7 +10,7 @@ HighTemp ht(0, A0);
 class FirewatchSensor : public PollingComponent, public sensor::Sensor {
  public:
 
-  FirewatchSensor() : PollingComponent(10000) { }
+  FirewatchSensor() : PollingComponent(5000) { }
 
   void setup() override {
     ht.begin();

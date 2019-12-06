@@ -27,9 +27,12 @@ sensor:
     return {firewatch_sensor};
   sensors:
     name: "Wood Stove Temp"
-    unit_of_measurement: "°C"
     icon: "mdi:fire"
-    on_value:
-      logger.log:
-        format: "Stove temp is %.1f"
-        args: [ 'x' ]
+    filters:
+      - lambda: return x * (9.0/5.0) + 32.0;
+    unit_of_measurement: "°F"
+    # unit_of_measurement: "°C"
+    # on_value:
+    #   logger.log:
+    #     format: "Stove temp is %f"
+    #     args: [ 'x' ]

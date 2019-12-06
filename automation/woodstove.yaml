@@ -1,0 +1,30 @@
+- id: '1574283424999'
+  alias: Fire Starting
+  description: ''
+  trigger:
+  - above: 70
+    entity_id: sensor.wood_stove_temp
+    for:
+      minutes: 5
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      entity_id:
+      - switch.wood_stove_fan
+    service: switch.turn_on
+- id: '1574400685338'
+  alias: Fire Cooling
+  description: ''
+  trigger:
+  - below: 60
+    entity_id: sensor.wood_stove_temp
+    for:
+      minutes: 20
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      entity_id:
+      - switch.wood_stove_fan
+    service: switch.turn_off

@@ -1,0 +1,20 @@
+- alias: Enable MQTT discovery for all devices
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/tasmotas/SetOption19
+      payload: '1'
+  id: enable_discovery
+- alias: Enable mDNS for all devices
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+  - service: mqtt.publish
+    data:
+      topic: cmnd/tasmotas/SetOption55
+      payload: '1'
+  id: enable_mdns
