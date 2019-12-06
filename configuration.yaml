@@ -3,9 +3,9 @@ default_config:
 
 homeassistant:
   name: Butternut Farm
-  latitude: 45.548135
-  longitude: -75.789721
-  elevation: 155
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
