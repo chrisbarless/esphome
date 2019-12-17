@@ -5,7 +5,7 @@
   action:
   - service: mqtt.publish
     data:
-      topic: cmnd/tasmotas/SetOption19
+      topic: tasmotas/cmnd/SetOption19
       payload: '1'
   id: enable_discovery
 - alias: Enable mDNS for all devices
@@ -15,7 +15,7 @@
   action:
   - service: mqtt.publish
     data:
-      topic: cmnd/tasmotas/SetOption55
+      topic: tasmotas/cmnd/SetOption55
       payload: '1'
   id: enable_mdns
 - alias: "Sync Tasmota states on start-up - autodiscovery"
