@@ -4,13 +4,14 @@
   trigger:
   - at: '7:00'
     platform: time
-    condition:
-      weekday:
-        - mon
-        - tues
-        - wed
-        - thurs
-        - fri
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
   - data:
       entity_id:
@@ -23,13 +24,14 @@
   trigger:
   - at: '9:00'
     platform: time
-    condition:
-      weekday:
-        - mon
-        - tues
-        - wed
-        - thurs
-        - fri
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
   - data:
       entity_id:
