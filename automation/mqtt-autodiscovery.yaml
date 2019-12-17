@@ -18,3 +18,14 @@
       topic: cmnd/tasmotas/SetOption55
       payload: '1'
   id: enable_mdns
+- alias: "Sync Tasmota states on start-up - autodiscovery"
+  id: sync_tasmotas
+  initial_state: true
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "tasmotas/cmnd/state"
+        payload: ""
